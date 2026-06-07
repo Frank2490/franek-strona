@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { supabase } from '@/lib/supabase'
 
 type FormState = {
   name: string
@@ -27,17 +26,29 @@ export default function ContactForm() {
     setStatus('idle')
 
     try {
-      const { error: dbError } = await supabase.from('contacts').insert([
-        {
+      // 1. Insert into Supabase contacts table
+      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+      const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+      const dbRes = await fetch(`${supabaseUrl}/rest/v1/contacts`, {
+        method: 'POST',
+        headers: {
+          'apikey': supabaseKey!,
+          'Authorization': `Bearer ${supabaseKey}`,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=minimal',
+        },
+        body: JSON.stringify({
           name: form.name,
           email: form.email,
           phone: form.phone || null,
           message: form.message,
-        },
-      ])
+        }),
+      })
 
-      if (dbError) throw dbError
+      if (!dbRes.ok) throw new Error(`Supabase error: ${dbRes.status}`)
 
+      // 2. Trigger n8n webhook
       const webhookUrl = process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL
       if (webhookUrl) {
         await fetch(webhookUrl, {
