@@ -75,7 +75,7 @@ export default function Home() {
         </section>
 
         {/* Stats */}
-        <div className="hero-meta reveal">
+        <div className="stats-bar reveal">
           <div className="item">
             <span className="label">CZAS REALIZACJI</span>
             <p>Do 7 dni</p>
