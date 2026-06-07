@@ -26,7 +26,6 @@ export default function ContactForm() {
     setStatus('idle')
 
     try {
-      // 1. Insert into Supabase contacts table
       const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
       const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
@@ -47,16 +46,6 @@ export default function ContactForm() {
       })
 
       if (!dbRes.ok) throw new Error(`Supabase error: ${dbRes.status}`)
-
-      // 2. Trigger n8n webhook
-      const webhookUrl = process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL
-      if (webhookUrl) {
-        await fetch(webhookUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(form),
-        })
-      }
 
       setStatus('success')
       setForm(initialState)
