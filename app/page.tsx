@@ -26,6 +26,20 @@ export default function Home() {
           <p className="hero-sub reveal d2">
             Projektuję i koduję nowoczesne strony internetowe, które budują zaufanie i pomagają zdobywać klientów.
           </p>
+          <div className="hero-meta reveal d3">
+            <div className="item">
+              <span className="label">CZAS REALIZACJI</span>
+              <p>Do 14 dni</p>
+            </div>
+            <div className="item">
+              <span className="label">CENY OD</span>
+              <p>800 zł</p>
+            </div>
+            <div className="item">
+              <span className="label">LOKALIZACJA</span>
+              <p>Polska · zdalnie</p>
+            </div>
+          </div>
         </section>
 
         {/* Services */}
@@ -73,22 +87,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* Stats */}
-        <div className="stats-bar reveal">
-          <div className="item">
-            <span className="label">CZAS REALIZACJI</span>
-            <p>Do 7 dni</p>
-          </div>
-          <div className="item">
-            <span className="label">CENY OD</span>
-            <p>800 zł</p>
-          </div>
-          <div className="item">
-            <span className="label">LOKALIZACJA</span>
-            <p>Polska · zdalnie</p>
-          </div>
-        </div>
 
         {/* Projects */}
         <section className="block projects" id="projekty" data-screen-label="Atelier — Projekty">
