@@ -3,6 +3,7 @@ import Header from '@/components/Header'
 import BgLayer from '@/components/BgLayer'
 import ScrollReveal from '@/components/ScrollReveal'
 import TweaksPanelApp from '@/components/TweaksPanel'
+import ContactForm from '@/components/ContactForm'
 
 const CheckIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
@@ -174,15 +175,13 @@ export default function Home() {
 
         {/* Contact */}
         <section className="contact" id="kontakt" data-screen-label="Atelier — Kontakt">
-          <div className="sec-head reveal">
-            <span className="num">03</span>
-            <h2>Kontakt</h2>
+          <div className="contact-header">
+            <span className="num reveal">03</span>
+            <h2 className="reveal d1">Kontakt</h2>
+            <p className="contact-sub reveal d2">Masz pomysł? Zróbmy z niego coś realnego.</p>
           </div>
           <div className="contact-inner">
-            <h2 className="reveal">
-              Masz pomysł?&nbsp;<br />
-              Zróbmy z niego <a href="mailto:franeksolewicz228@gmail.com">coś realnego</a>.
-            </h2>
+            <ContactForm />
             <div className="contact-side reveal d1">
               <div className="row">
                 <span className="label">E-mail</span>
