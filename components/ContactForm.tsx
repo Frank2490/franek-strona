@@ -26,26 +26,13 @@ export default function ContactForm() {
     setStatus('idle')
 
     try {
-      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-      const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-
-      const dbRes = await fetch(`${supabaseUrl}/rest/v1/contacts`, {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        headers: {
-          'apikey': supabaseKey!,
-          'Authorization': `Bearer ${supabaseKey}`,
-          'Content-Type': 'application/json',
-          'Prefer': 'return=minimal',
-        },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          phone: form.phone || null,
-          message: form.message,
-        }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
       })
 
-      if (!dbRes.ok) throw new Error(`Supabase error: ${dbRes.status}`)
+      if (!res.ok) throw new Error()
 
       setStatus('success')
       setForm(initialState)
