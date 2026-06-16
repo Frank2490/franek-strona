@@ -66,10 +66,10 @@ nav a:hover { color: var(--ink); }
 .cta:hover { background: var(--clay); color: var(--paper) !important; }
 
 /* ===== hero ===== */
-.hero { position: relative; padding: clamp(150px, 19vh, 230px) var(--pad) clamp(220px, 30vw, 310px); background-color: #2ec4b6; background-image: radial-gradient(circle, rgba(255,255,255,0.13) 1.5px, transparent 1.5px), radial-gradient(ellipse at 80% 10%, rgba(159,237,230,0.7) 0%, transparent 55%), linear-gradient(145deg, rgba(26,26,46,0.22) 0%, transparent 55%); background-size: 22px 22px, auto, auto; }
+.hero { position: relative; padding: clamp(150px, 19vh, 230px) var(--pad) clamp(60px, 9vh, 110px); background-color: #2ec4b6; background-image: radial-gradient(circle, rgba(255,255,255,0.13) 1.5px, transparent 1.5px), radial-gradient(ellipse at 80% 10%, rgba(159,237,230,0.7) 0%, transparent 55%), linear-gradient(145deg, rgba(26,26,46,0.22) 0%, transparent 55%); background-size: 22px 22px, auto, auto; }
 
 /* ===== keyboard illustration ===== */
-.kb-scene { position: absolute; bottom: 0; left: 0; right: 0; pointer-events: none; }
+.kb-scene { position: absolute; inset: 0; pointer-events: none; display: flex; flex-direction: column; justify-content: flex-end; opacity: 0.13; }
 .kb { display: flex; flex-direction: column; gap: 5px; }
 .kb-row { display: flex; gap: 5px; }
 .key { flex: 1; height: clamp(28px, 4.2vw, 46px); background: #0D1B2A; border-radius: clamp(4px, 0.6vw, 8px); }
