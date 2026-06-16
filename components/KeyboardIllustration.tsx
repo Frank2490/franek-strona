@@ -1,20 +1,16 @@
-const ROW1 = ['Q','W','E','R','T','Y','U','I','O','P']
-const ROW2 = ['A','S','D','F','G','H','J','K','L']
-const ROW3 = ['Z','X','C','V','B','N','M']
+const ROWS = [14, 14, 12, 9]
 
 export default function KeyboardIllustration() {
   return (
     <div className="kb-scene" aria-hidden="true">
       <div className="kb">
-        <div className="kb-row">
-          {ROW1.map(k => <div key={k} className="key">{k}</div>)}
-        </div>
-        <div className="kb-row kb-r2">
-          {ROW2.map(k => <div key={k} className="key">{k}</div>)}
-        </div>
-        <div className="kb-row kb-r3">
-          {ROW3.map(k => <div key={k} className="key">{k}</div>)}
-        </div>
+        {ROWS.map((count, i) => (
+          <div key={i} className="kb-row">
+            {Array.from({ length: count }).map((_, j) => (
+              <div key={j} className="key" />
+            ))}
+          </div>
+        ))}
       </div>
     </div>
   )
