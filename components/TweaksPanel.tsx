@@ -111,14 +111,14 @@ const FONTS: Record<string, { fam: string; w: number }> = {
 }
 
 const TWEAK_DEFAULTS: TweakValues = {
-  displayFont: 'Jost',
+  displayFont: 'Space Grotesk',
   accent: '#1a1a2e',
   bg: 'mesh',
 }
 
 function applyTweaks(t: TweakValues) {
   const r = document.documentElement
-  const f = FONTS[t.displayFont] ?? FONTS['Jost']
+  const f = FONTS[t.displayFont] ?? FONTS['Space Grotesk']
   r.style.setProperty('--serif', f.fam)
   r.style.setProperty('--disp-weight', String(f.w))
   r.style.setProperty('--clay', t.accent)
