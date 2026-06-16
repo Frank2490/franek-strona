@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import CookieBanner from '@/components/CookieBanner'
 
 export const metadata: Metadata = {
   title: 'Franciszek Solewicz — Atelier',
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body data-bg="mesh" data-font="Aktiv-Grotesk-(≈-Hanken)" suppressHydrationWarning>
         {children}
+        <CookieBanner />
       </body>
     </html>
   )

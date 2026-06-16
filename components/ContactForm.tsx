@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 
 type FormState = {
   name: string
@@ -13,6 +14,7 @@ const initialState: FormState = { name: '', email: '', phone: '', message: '' }
 
 export default function ContactForm() {
   const [form, setForm] = useState<FormState>(initialState)
+  const [consent, setConsent] = useState(false)
   const [loading, setLoading] = useState(false)
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
@@ -46,6 +48,7 @@ export default function ContactForm() {
 
       setStatus('success')
       setForm(initialState)
+      setConsent(false)
     } catch {
       setStatus('error')
     } finally {
@@ -110,6 +113,19 @@ export default function ContactForm() {
         />
       </div>
 
+      <label className="cf-consent">
+        <input
+          type="checkbox"
+          required
+          checked={consent}
+          onChange={e => setConsent(e.target.checked)}
+        />
+        <span>
+          Wyrażam zgodę na przetwarzanie moich danych osobowych przez Franciszka Solewicza w celu odpowiedzi na moje zapytanie, zgodnie z{' '}
+          <Link href="/polityka-prywatnosci">Polityką Prywatności</Link>.
+        </span>
+      </label>
+
       {status === 'success' && (
         <p className="cf-feedback cf-success">Dziękuję! Odezwę się wkrótce.</p>
       )}
@@ -117,7 +133,7 @@ export default function ContactForm() {
         <p className="cf-feedback cf-error">Coś poszło nie tak. Spróbuj ponownie.</p>
       )}
 
-      <button type="submit" className="cf-btn" disabled={loading}>
+      <button type="submit" className="cf-btn" disabled={loading || !consent}>
         {loading ? 'Wysyłanie...' : 'Wyślij wiadomość'}
       </button>
     </form>
