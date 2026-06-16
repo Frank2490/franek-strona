@@ -66,7 +66,16 @@ nav a:hover { color: var(--ink); }
 .cta:hover { background: var(--clay); color: var(--paper) !important; }
 
 /* ===== hero ===== */
-.hero { padding: clamp(150px, 19vh, 230px) var(--pad) clamp(60px, 9vh, 110px); background-color: #2ec4b6; background-image: radial-gradient(circle, rgba(255,255,255,0.13) 1.5px, transparent 1.5px), radial-gradient(ellipse at 80% 10%, rgba(159,237,230,0.7) 0%, transparent 55%), linear-gradient(145deg, rgba(26,26,46,0.22) 0%, transparent 55%); background-size: 22px 22px, auto, auto; }
+.hero { position: relative; padding: clamp(150px, 19vh, 230px) var(--pad) clamp(210px, 28vh, 280px); background-color: #2ec4b6; background-image: radial-gradient(circle, rgba(255,255,255,0.13) 1.5px, transparent 1.5px), radial-gradient(ellipse at 80% 10%, rgba(159,237,230,0.7) 0%, transparent 55%), linear-gradient(145deg, rgba(26,26,46,0.22) 0%, transparent 55%); background-size: 22px 22px, auto, auto; overflow: hidden; }
+
+/* ===== keyboard illustration ===== */
+.kb-scene { position: absolute; bottom: 0; left: 0; right: 0; display: flex; justify-content: center; align-items: flex-end; pointer-events: none; }
+.kb { width: min(880px, 94vw); background: #3ECFBF; border-radius: 18px 18px 0 0; padding: 20px 24px 0; display: flex; flex-direction: column; gap: 8px; transform: perspective(900px) rotateX(-14deg); transform-origin: bottom center; box-shadow: 0 -10px 50px rgba(13,27,42,0.14), inset 0 1px 0 rgba(255,255,255,0.15); }
+.kb-row { display: flex; gap: 7px; }
+.kb-r2 { padding-left: 3.5%; }
+.kb-r3 { padding-left: 7%; }
+.key { flex: 1; height: 46px; background: #0D1B2A; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.07em; color: rgba(62,207,191,0.55); box-shadow: 0 5px 0 rgba(0,0,0,0.45), 0 8px 12px rgba(0,0,0,0.22); user-select: none; }
+@media (max-width: 600px) { .kb { padding: 13px 15px 0; gap: 5px; border-radius: 12px 12px 0 0; } .kb-row { gap: 4px; } .key { height: 30px; font-size: 8.5px; border-radius: 5px; box-shadow: 0 3px 0 rgba(0,0,0,0.45); } }
 .hero .avail { display: inline-flex; align-items: center; gap: 9px; border: 1px solid color-mix(in oklch, var(--clay) 40%, var(--line)); background: color-mix(in oklch, var(--clay) 8%, var(--paper)); border-radius: 100px; padding: 7px 15px 7px 13px; font-size: 13px; color: var(--ink-soft); margin-bottom: 38px; }
 .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--clay); position: relative; }
 .pulse::after { content: ""; position: absolute; inset: -4px; border-radius: 50%; border: 1px solid var(--clay); animation: pulse 2.4s ease-out infinite; }
