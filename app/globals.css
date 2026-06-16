@@ -66,14 +66,8 @@ nav a:hover { color: var(--ink); }
 .cta:hover { background: var(--clay); color: var(--paper) !important; }
 
 /* ===== hero ===== */
-.hero { position: relative; padding: clamp(150px, 19vh, 230px) var(--pad) clamp(60px, 9vh, 110px); background-color: #2ec4b6; background-image: radial-gradient(circle, rgba(255,255,255,0.13) 1.5px, transparent 1.5px), radial-gradient(ellipse at 80% 10%, rgba(159,237,230,0.7) 0%, transparent 55%), linear-gradient(145deg, rgba(26,26,46,0.22) 0%, transparent 55%); background-size: 22px 22px, auto, auto; }
+.hero { padding: clamp(150px, 19vh, 230px) var(--pad) clamp(60px, 9vh, 110px); background-color: #2ec4b6; background-image: radial-gradient(circle, rgba(255,255,255,0.13) 1.5px, transparent 1.5px), radial-gradient(ellipse at 80% 10%, rgba(159,237,230,0.7) 0%, transparent 55%), linear-gradient(145deg, rgba(26,26,46,0.22) 0%, transparent 55%); background-size: 22px 22px, auto, auto; }
 
-/* ===== keyboard illustration ===== */
-.kb-scene { position: absolute; inset: 0; pointer-events: none; display: flex; flex-direction: column; justify-content: flex-end; opacity: 0.13; }
-.kb { display: flex; flex-direction: column; gap: 5px; }
-.kb-row { display: flex; gap: 5px; }
-.key { flex: 1; height: clamp(28px, 4.2vw, 46px); background: #0D1B2A; border-radius: clamp(4px, 0.6vw, 8px); }
-@media (max-width: 480px) { .kb { gap: 3px; } .kb-row { gap: 3px; } }
 .hero .avail { display: inline-flex; align-items: center; gap: 9px; border: 1px solid color-mix(in oklch, var(--clay) 40%, var(--line)); background: color-mix(in oklch, var(--clay) 8%, var(--paper)); border-radius: 100px; padding: 7px 15px 7px 13px; font-size: 13px; color: var(--ink-soft); margin-bottom: 38px; }
 .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--clay); position: relative; }
 .pulse::after { content: ""; position: absolute; inset: -4px; border-radius: 50%; border: 1px solid var(--clay); animation: pulse 2.4s ease-out infinite; }

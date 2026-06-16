@@ -4,7 +4,6 @@ import ScrollReveal from '@/components/ScrollReveal'
 import TweaksPanelApp from '@/components/TweaksPanel'
 import ContactForm from '@/components/ContactForm'
 import ProjectCard from '@/components/ProjectCard'
-import KeyboardIllustration from '@/components/KeyboardIllustration'
 
 const CheckIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
@@ -41,7 +40,6 @@ export default function Home() {
               <p>Polska · zdalnie</p>
             </div>
           </div>
-          <KeyboardIllustration />
         </section>
 
         {/* Services */}
