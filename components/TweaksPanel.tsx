@@ -111,7 +111,7 @@ const FONTS: Record<string, { fam: string; w: number }> = {
 
 const TWEAK_DEFAULTS: TweakValues = {
   displayFont: 'Aktiv Grotesk (≈ Hanken)',
-  accent: '#44372d',
+  accent: '#1a1a2e',
   bg: 'mesh',
 }
 
@@ -378,7 +378,7 @@ export default function TweaksPanelApp() {
       <TweakColor
         label="Akcent"
         value={t.accent}
-        options={['#C2613C', '#44372d', '#3F66B0', '#8A4F86', '#B8862F']}
+        options={['#C2613C', '#1a1a2e', '#3F66B0', '#8A4F86', '#B8862F']}
         onChange={(v) => setTweak('accent', v)}
       />
       <TweakSection label="Grafika tła" />
