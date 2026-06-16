@@ -101,7 +101,8 @@ const TWEAKS_STYLE = `
 type TweakValues = { displayFont: string; accent: string; bg: string }
 
 const FONTS: Record<string, { fam: string; w: number }> = {
-  'Aktiv Grotesk (≈ Hanken)': { fam: "'Hanken Grotesk', system-ui, sans-serif", w: 600 },
+  'Jost':                     { fam: "'Jost', system-ui, sans-serif",             w: 600 },
+  'Aktiv Grotesk (≈ Hanken)': { fam: "'Hanken Grotesk', system-ui, sans-serif",  w: 600 },
   'Inter':                    { fam: "'Inter', system-ui, sans-serif",            w: 600 },
   'Space Grotesk':            { fam: "'Space Grotesk', system-ui, sans-serif",    w: 600 },
   'Newsreader':               { fam: "'Newsreader', Georgia, serif",               w: 500 },
@@ -110,14 +111,14 @@ const FONTS: Record<string, { fam: string; w: number }> = {
 }
 
 const TWEAK_DEFAULTS: TweakValues = {
-  displayFont: 'Aktiv Grotesk (≈ Hanken)',
+  displayFont: 'Jost',
   accent: '#1a1a2e',
   bg: 'mesh',
 }
 
 function applyTweaks(t: TweakValues) {
   const r = document.documentElement
-  const f = FONTS[t.displayFont] ?? FONTS['Aktiv Grotesk (≈ Hanken)']
+  const f = FONTS[t.displayFont] ?? FONTS['Jost']
   r.style.setProperty('--serif', f.fam)
   r.style.setProperty('--disp-weight', String(f.w))
   r.style.setProperty('--clay', t.accent)
@@ -371,7 +372,7 @@ export default function TweaksPanelApp() {
       <TweakSelect
         label="Czcionka nagłówków"
         value={t.displayFont}
-        options={['Aktiv Grotesk (≈ Hanken)', 'Inter', 'Space Grotesk', 'Newsreader', 'Bricolage Grotesque', 'Instrument Serif']}
+        options={['Jost', 'Aktiv Grotesk (≈ Hanken)', 'Inter', 'Space Grotesk', 'Newsreader', 'Bricolage Grotesque', 'Instrument Serif']}
         onChange={(v) => setTweak('displayFont', v)}
       />
       <TweakSection label="Kolor akcentu" />
