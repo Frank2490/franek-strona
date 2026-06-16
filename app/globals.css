@@ -66,7 +66,7 @@ nav a:hover { color: var(--ink); }
 .cta:hover { background: var(--clay); color: var(--paper) !important; }
 
 /* ===== hero ===== */
-.hero { padding: clamp(150px, 19vh, 230px) var(--pad) clamp(60px, 9vh, 110px); }
+.hero { padding: clamp(150px, 19vh, 230px) var(--pad) clamp(60px, 9vh, 110px); background-color: #FAFAFA; background-image: radial-gradient(circle, rgba(224, 216, 204, 0.55) 1.5px, transparent 1.5px); background-size: 22px 22px; }
 .hero .avail { display: inline-flex; align-items: center; gap: 9px; border: 1px solid color-mix(in oklch, var(--clay) 40%, var(--line)); background: color-mix(in oklch, var(--clay) 8%, var(--paper)); border-radius: 100px; padding: 7px 15px 7px 13px; font-size: 13px; color: var(--ink-soft); margin-bottom: 38px; }
 .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--clay); position: relative; }
 .pulse::after { content: ""; position: absolute; inset: -4px; border-radius: 50%; border: 1px solid var(--clay); animation: pulse 2.4s ease-out infinite; }
