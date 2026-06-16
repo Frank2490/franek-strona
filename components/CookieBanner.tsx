@@ -2,17 +2,31 @@
 
 import { useEffect, useState } from 'react'
 
+const STORAGE_KEY = 'cookie-consent'
+
+function hasConsent(): boolean {
+  try {
+    return localStorage.getItem(STORAGE_KEY) === '1'
+  } catch {
+    return false
+  }
+}
+
+function saveConsent(): void {
+  try {
+    localStorage.setItem(STORAGE_KEY, '1')
+  } catch {}
+}
+
 export default function CookieBanner() {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    if (!localStorage.getItem('cookie-consent')) {
-      setVisible(true)
-    }
+    if (!hasConsent()) setVisible(true)
   }, [])
 
   const accept = () => {
-    localStorage.setItem('cookie-consent', '1')
+    saveConsent()
     setVisible(false)
   }
 
