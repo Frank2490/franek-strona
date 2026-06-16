@@ -1,9 +1,9 @@
-import Image from 'next/image'
 import Header from '@/components/Header'
 import BgLayer from '@/components/BgLayer'
 import ScrollReveal from '@/components/ScrollReveal'
 import TweaksPanelApp from '@/components/TweaksPanel'
 import ContactForm from '@/components/ContactForm'
+import ProjectCard from '@/components/ProjectCard'
 
 const CheckIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
@@ -95,81 +95,42 @@ export default function Home() {
             <h2>Wybrane realizacje</h2>
           </div>
           <div className="proj-grid">
-            <div className="proj reveal">
-              <div className="thumb">
-                <span className="badge">Strona firmowa</span>
-                <span className="arrow">↗</span>
-                <Image
-                  src="/assets/proj-salon.png"
-                  alt="Strona salonu kosmetycznego — Warszawa"
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  loading="lazy"
-                />
-              </div>
-              <div className="proj-info">
-                <h3>Salon kosmetyczny</h3>
-                <span className="yr"></span>
-              </div>
-              <p>Elegancka strona salonu kosmetycznego z galerią zabiegów oraz przejrzystym cennikiem usług.</p>
-            </div>
-
-            <div className="proj reveal d1">
-              <div className="thumb">
-                <span className="badge">Strona firmowa</span>
-                <span className="arrow">↗</span>
-                <Image
-                  src="/assets/proj-barber.png"
-                  alt="Strona barbershopu BarberStan"
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  loading="lazy"
-                />
-              </div>
-              <div className="proj-info">
-                <h3>BarberStan</h3>
-                <span className="yr"></span>
-              </div>
-              <p>Nowoczesna strona barbershopu z cennikiem usług i umawianiem wizyt online.</p>
-            </div>
-
-            <div className="proj reveal">
-              <div className="thumb">
-                <span className="badge">Landing page</span>
-                <span className="arrow">↗</span>
-                <Image
-                  src="/assets/proj-touchnlock.png"
-                  alt="Landing page Touch 'n' Lock — biometryczna kłódka na odcisk palca"
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  loading="lazy"
-                />
-              </div>
-              <div className="proj-info">
-                <h3>Touch &apos;n&apos; Lock</h3>
-                <span className="yr"></span>
-              </div>
-              <p>Sprzedażowy landing page biometrycznej kłódki otwieranej odciskiem palca.</p>
-            </div>
-
-            <div className="proj reveal d1">
-              <div className="thumb">
-                <span className="badge">Landing page</span>
-                <span className="arrow">↗</span>
-                <Image
-                  src="/assets/proj-promptify.png"
-                  alt="Promptify — aplikacja webowa do generowania profesjonalnych promptów AI"
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  loading="lazy"
-                />
-              </div>
-              <div className="proj-info">
-                <h3>Promptify</h3>
-                <span className="yr"></span>
-              </div>
-              <p>Aplikacja webowa, która z prostych słów użytkownika tworzy profesjonalne, zoptymalizowane prompty dla modeli AI.</p>
-            </div>
+            <ProjectCard
+              className="reveal"
+              image="/assets/proj-salon.png"
+              imageAlt="Strona salonu kosmetycznego — Warszawa"
+              video="/assets/videos/proj-salon.mp4"
+              badge="Strona firmowa"
+              title="Salon kosmetyczny"
+              description="Elegancka strona salonu kosmetycznego z galerią zabiegów oraz przejrzystym cennikiem usług."
+            />
+            <ProjectCard
+              className="reveal d1"
+              image="/assets/proj-barber.png"
+              imageAlt="Strona barbershopu BarberStan"
+              video="/assets/videos/proj-barber.mp4"
+              badge="Strona firmowa"
+              title="BarberStan"
+              description="Nowoczesna strona barbershopu z cennikiem usług i umawianiem wizyt online."
+            />
+            <ProjectCard
+              className="reveal"
+              image="/assets/proj-touchnlock.png"
+              imageAlt="Landing page Touch 'n' Lock — biometryczna kłódka na odcisk palca"
+              video="/assets/videos/proj-touchnlock.mp4"
+              badge="Landing page"
+              title="Touch 'n' Lock"
+              description="Sprzedażowy landing page biometrycznej kłódki otwieranej odciskiem palca."
+            />
+            <ProjectCard
+              className="reveal d1"
+              image="/assets/proj-promptify.png"
+              imageAlt="Promptify — aplikacja webowa do generowania profesjonalnych promptów AI"
+              video="/assets/videos/proj-promptify.mp4"
+              badge="Landing page"
+              title="Promptify"
+              description="Aplikacja webowa, która z prostych słów użytkownika tworzy profesjonalne, zoptymalizowane prompty dla modeli AI."
+            />
           </div>
         </section>
 
