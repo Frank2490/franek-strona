@@ -9,12 +9,12 @@ export const metadata: Metadata = {
 export default function PolitykaPrywatnosci() {
   return (
     <>
-      <div className="bg-layer">
-        <div className="blob b1" />
-        <div className="blob b2" />
-        <div className="blob b3" />
-        <div className="blob b4" />
-        <div className="grain" />
+      <div className="bg-layer" aria-hidden="true">
+        <span className="blob b1" />
+        <span className="blob b2" />
+        <span className="blob b3" />
+        <span className="blob b4" />
+        <span className="grain" />
       </div>
 
       <main className="pp-wrap">
