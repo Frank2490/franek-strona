@@ -11,6 +11,7 @@ interface ProjectCardProps {
   title: string
   year?: string
   description: string
+  liveUrl?: string
   className?: string
 }
 
@@ -22,6 +23,7 @@ export default function ProjectCard({
   title,
   year,
   description,
+  liveUrl,
   className = '',
 }: ProjectCardProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -40,8 +42,14 @@ export default function ProjectCard({
     setVideoActive(false)
   }
 
-  return (
-    <div className={`proj ${className}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+  const sharedProps = {
+    className: `proj ${className}`,
+    onMouseEnter: handleMouseEnter,
+    onMouseLeave: handleMouseLeave,
+  }
+
+  const inner = (
+    <>
       <div className="thumb">
         <span className="badge">{badge}</span>
         <span className="arrow">↗</span>
@@ -63,6 +71,16 @@ export default function ProjectCard({
         <span className="yr">{year}</span>
       </div>
       <p>{description}</p>
-    </div>
+    </>
   )
+
+  if (liveUrl) {
+    return (
+      <a {...sharedProps} href={liveUrl} target="_blank" rel="noopener noreferrer">
+        {inner}
+      </a>
+    )
+  }
+
+  return <div {...sharedProps}>{inner}</div>
 }

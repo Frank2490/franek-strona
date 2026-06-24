@@ -103,6 +103,7 @@ export default function Home() {
               badge="Strona firmowa"
               title="Salon kosmetyczny"
               description="Elegancka strona salonu kosmetycznego z galerią zabiegów oraz przejrzystym cennikiem usług."
+              liveUrl="https://gabinet-kosmetyczny-landing-page.vercel.app/"
             />
             <ProjectCard
               className="reveal d1"
@@ -112,6 +113,7 @@ export default function Home() {
               badge="Strona firmowa"
               title="BarberStan"
               description="Nowoczesna strona barbershopu z cennikiem usług i umawianiem wizyt online."
+              liveUrl="https://barber-stan.vercel.app/"
             />
             <ProjectCard
               className="reveal"
@@ -121,6 +123,7 @@ export default function Home() {
               badge="Landing page"
               title="Touch 'n' Lock"
               description="Sprzedażowy landing page biometrycznej kłódki otwieranej odciskiem palca."
+              liveUrl="https://touch-n-lock.vercel.app/"
             />
             <ProjectCard
               className="reveal d1"
@@ -130,6 +133,7 @@ export default function Home() {
               badge="Landing page"
               title="Promptify"
               description="Aplikacja webowa, która z prostych słów użytkownika tworzy profesjonalne, zoptymalizowane prompty dla modeli AI."
+              liveUrl="https://promptify-five-kappa.vercel.app/"
             />
           </div>
         </section>
