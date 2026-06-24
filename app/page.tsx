@@ -26,7 +26,8 @@ export default function Home() {
           <p className="hero-sub reveal d2">
             Projektuję i koduję nowoczesne strony internetowe, które budują zaufanie i pomagają zdobywać klientów.
           </p>
-          <div className="hero-meta reveal d3">
+          <a href="#kontakt" className="hero-cta reveal d3">Porozmawiajmy o Twojej stronie →</a>
+          <div className="hero-meta reveal d4">
             <div className="item">
               <span className="label">CZAS REALIZACJI</span>
               <p>Do 14 dni</p>
